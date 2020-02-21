@@ -1,0 +1,39 @@
+
+Showing logs for build [32mvicky997-testrepo-master-releas-n9f7x-2[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-f6hm2[0m
+{"level":"warn","ts":1582273185.377064,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1582273185.3775055,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mvicky997-testrepo-master-releas-n9f7x-2[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-cvh7q[0m
+{"level":"warn","ts":1582273185.7096522,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1582273185.7106676,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mvicky997-testrepo-master-releas-n9f7x-2[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mvicky997-testrepo-master-releas-n9f7x-2[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-vicky997-testrepo-master-releas-n9f7x-s5zvz[0m
+{"level":"warn","ts":1582273191.7212114,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1582273193.5236878,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/********/testRepo.git @ v0.0.2 in path /workspace/source"}
+
+Showing logs for build [32mvicky997-testrepo-master-releas-n9f7x-2[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:63fc999ca2821242e86c0fc762294650a28712fa
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mvicky997-testrepo-master-releas-n9f7x-2[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mvicky997-testrepo-master-releas-n9f7x-2[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Downloading base image nginx                 
+[36mINFO[0m[0002] Error while retrieving image from cache: getting file info: stat /workspace/sha256:62f787b94e5faddb79f96c84ac0877aaf28fb325bfc3601b9c0934d4c107ba94: no such file or directory 
+[36mINFO[0m[0002] Downloading base image nginx                 
+[36mINFO[0m[0003] Checking for cached layer 685249416972.dkr.ecr.ap-south-1.amazonaws.com/todo/cache:c1675a6ca7336a98b21b5aea88b6c66534ade7c2578029bf8d6fe42923128f6a... 
+[36mINFO[0m[0004] No cached layer found for cmd RUN    mkdir -p /var/www/html/ && 	touch /var/www/html/index.html && 	 echo "hi" > /var/www/html/index.html 
+[36mINFO[0m[0004] Unpacking rootfs as cmd RUN    mkdir -p /var/www/html/ && 	touch /var/www/html/index.html && 	 echo "hi" > /var/www/html/index.html requires it. 
+[36mINFO[0m[0007] Taking snapshot of full filesystem...        
+[36mINFO[0m[0008] RUN    mkdir -p /var/www/html/ && 	touch /var/www/html/index.html && 	 echo "hi" > /var/www/html/index.html 
+[36mINFO[0m[0008] cmd: /bin/sh                                 
+[36mINFO[0m[0008] args: [-c mkdir -p /var/www/html/ && 	touch /var/www/html/index.html && 	 echo "hi" > /var/www/html/index.html] 
+[36mINFO[0m[0008] Taking snapshot of full filesystem...        
+[36mINFO[0m[0008] Pushing layer 685249416972.dkr.ecr.ap-south-1.amazonaws.com/todo/cache:c1675a6ca7336a98b21b5aea88b6c66534ade7c2578029bf8d6fe42923128f6a to cache now 
+[33mWARN[0m[0010] error uploading layer to cache: failed to push to destination 685249416972.dkr.ecr.ap-south-1.amazonaws.com/todo/cache:c1675a6ca7336a98b21b5aea88b6c66534ade7c2578029bf8d6fe42923128f6a: DENIED: User: arn:aws:sts::685249416972:assumed-role/eksctl-zyla-sandbox-nodegroup-zyl-NodeInstanceRole-109DF8OW0FIGM/i-05d24237f9fb27b82 is not authorized to perform: ecr:InitiateLayerUpload on resource: arn:aws:ecr:ap-south-1:685249416972:repository/todo/cache 
+error pushing image: getting tag for destination: repository can only contain the runes `abcdefghijklmnopqrstuvwxyz0123456789_-./`: ********/testRepo
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-container-build'. The execution of the pipeline has stopped.[0m
